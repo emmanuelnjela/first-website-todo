@@ -1,0 +1,242 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-image: radial-gradient(#000000e8, #92e7efe8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-bar {
+  margin-top: 1rem;
+  background-color: orange;
+  padding: 1rem;
+  width: 80%;
+  border-top: 1px solid white;
+  border-radius: 1rem;
+  border-bottom: 1px solid white;
+  animation-name: slide-out;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  position: relative;
+  font-weight: 900;
+  translate: 2rem;
+  width: 100%
+}
+
+@keyframes slide-out {
+  from { transform: translateX(50rem); opacity: 0% }
+  to {transform: : translateX(0rem); opacity: 100%}
+}
+
+.nav-items button {
+  background-color: white;
+  border: none;
+  position: absolute;
+  top: -1rem;
+  font-weight: bold;
+  border-radius: 0 1rem 1rem 0;
+  color: orange;
+  height: 3.3rem;
+  width: 3.3rem
+}
+
+.todo-container {
+  width: 80vw;
+  height: 80vh;
+  margin-top: 2rem;
+  background-color: #ffffff4f;
+  border: .5px solid white;
+  border-left: 8px solid whitesmoke;
+  border-bottom: 5px solid whitesmoke;
+  padding: 2rem;
+  border-radius: 5%;
+  box-shadow: 0 0 .5rem #8080803b;
+  animation-name: rotate-3d;
+  animation-name: container-rotate;
+  animation-duration: 1.5s;
+  animation-delay: .5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes container-rotate {
+  from { 
+    transform: rotateY(-90deg); 
+    opacity: 50%;
+  }
+  to {
+    transform: rotateY(0deg); 
+    opacity: 100%;
+  }
+}
+
+@keyframes rotate-3d {
+  from {transform: rotate(360deg);}
+  to {transform: rotate(0deg);}
+}
+
+.todo-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.todo-header-title {
+  color: orange;
+}
+
+.badge {
+  background-color: orange;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 80%;
+  transform: scale(2);
+  position: absolute;
+  right: -2rem;
+  top: -2rem;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px grey;
+  animation-name: badge-bounce;
+  animation-delay: .8s;
+  animation-duration: 2s;
+  animation-direction: both;
+}
+
+@keyframes badge-bounce {
+  from { scale: 0 }
+  to { scale: 1 }
+}
+
+.todo-input-container {
+  display: flex;
+  border: .2rem solid orange;
+  border-left: .5rem solid orange;
+  outline: orange;
+  margin-bottom: 2rem;
+  border: .2rem solid #fff;
+  border-left: .5rem solid #f9f9f9;
+}
+
+input {
+  font-size: 1rem;
+}
+
+.todo-input-container button {
+  outline: none;
+  margin: 0;
+  background-color: orange;
+  width: 10%;
+  border: none;
+  border-right: .2rem solid orange;
+  color: whitesmoke;
+  font-size: 1.5rem;
+}
+
+.todo-input-container input {
+  padding: .5rem;
+  width: 90%;
+  border: none;
+  outline: none;
+}
+
+.todo-output-container {
+  height: 80%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+}
+
+thead tr {
+  margin-top: 0;
+  color: orange;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+tr {
+	background-color: white;
+	margin: 1rem 0;
+	padding: .5rem;
+	box-shadow: 0 0 5px lightgrey;
+	display: grid;
+  position: relative;
+  grid-column-gap: 1rem;
+  overflow: hidden;
+	grid-template-columns: 1fr 3.5fr .5fr;
+}
+
+tr button {
+  border: none;
+  color: white;
+  font-weight: bolder;
+  background-color: transparent;
+  background-color: orange;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 2.5rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border: .5px solid white;
+}
+
+
+.todo-header-title {
+  color: white;
+}
+
+@media screen and (min-width: 768px){
+  .nav-bar {
+    width: 40%;
+  }
+  .todo-container {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 768px){
+  tr {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr .5fr;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .todo-container {
+    width: 100%;
+  }
+}
+
+
